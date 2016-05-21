@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Team 4924 Website">
+    <meta name="description" content="Team 4924 DashBoard">
     <meta name="author" content="Me">
-    <title>STEM Robotics</title>
+    <title>DashBoard</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
@@ -18,7 +18,7 @@
   <body ng-app="robotics">
     <!-- Fixed navbar -->
 
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
       <div class="container navbar-inner">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -52,70 +52,37 @@
 
     <ui-view></ui-view>
 
-    <div class="navbar navbar-inverse navbar-static-bottom" role="navigation">
-      <div class="container">
-        <div class="navbar-text pull-left" style="font-weight: thin;">
-          Contact Us
-        </div>
-        <div class="navbar-text pull-right">
-          <a href="https://twitter.com/STEMpythons"><i class="fa fa-twitter-square fa-2x"></i></a>
-          <a href="https://www.instagram.com/stempythons/"><i class="fa fa-instagram fa-2x"></i></a>
-          <a href="https://github.com/FRCSTEM"><i class="fa fa-github fa-2x"></i></a>
-        </div>
-      </div>
-    </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
 
-    $('.nav a').on('click', function(event) {
-    event.preventDefault();
-    console.log("click");
-    if($(this).attr('data-scroll')=="home") {
-      scrollPoint = 0; 
-    } else {
-      var scrollAnchor = $(this).attr('data-scroll'), scrollPoint = $('div[data-anchor="' + scrollAnchor + '"]').offset().top - 28;
-    }
-
-    $('body,html').animate({
-        scrollTop: scrollPoint
-    }, 500);
-
-    })
-
-    $(document).on('click','.navbar-collapse.in',function(e) {
-    if( $(e.target).is('a') ) {
-        $(this).collapse('hide');
-      }
+  
+    $(function() {
+    $( ".column" ).sortable({
+      connectWith: ".column",
+      handle: ".portlet-header",
+      cancel: ".portlet-toggle",
+      placeholder: "portlet-placeholder ui-corner-all"
     });
-
-    $(window).scroll(function() {
-    var windscroll = $(window).scrollTop();
-    if (windscroll >= 100) {
-        $('.place').each(function(i) {
-            console.log($(this).attr('data-anchor'));
-            if ($(this).position().top <= windscroll + 80) {
-              if($(this).attr('data-anchor')=="teams"||$(this).attr('data-anchor')=="mechanical"||$(this).attr('data-anchor')=="electrical"||$(this).attr('data-anchor')=="business"||$(this).attr('data-anchor')=="programming") {
-                $('.nav li.active').removeClass('active');
-                $('.dropdown').addClass('active');
-              } else {
-                $('.nav li.active').removeClass('active');
-                $('.nav li a[data-scroll="'+$(this).attr('data-anchor')+'"]').parent('li').addClass('active');
-              }
-            }
-        });
-
-    } else {
-
-        $('.nav li.active').removeClass('active');
-        $('.nav li:first').addClass('active');
-    }
-
-}).scroll();
+ 
+    $( ".portlet" )
+      .addClass( "ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" )
+      .find( ".portlet-header" )
+        .addClass( "ui-widget-header ui-corner-all" )
+        .prepend( "<span class='ui-icon ui-icon-minusthick portlet-toggle'></span>");
+ 
+    $( ".portlet-toggle" ).click(function() {
+      var icon = $( this );
+      icon.toggleClass( "ui-icon-minusthick ui-icon-plusthick" );
+      icon.closest( ".portlet" ).find( ".portlet-content" ).toggle();
+    });
+  });
+    
 
     </script>
   </body>
