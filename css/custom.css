@@ -1,12 +1,10 @@
-
-
 .jumbotron {
-    position: relative;
-    background: #000 url("/images/jumbotron-bg.jpg") center center;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    overflow: hidden;
+  position: relative;
+  background: #000 url("/images/jumbotron-bg.jpg") center center;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  overflow: hidden;
 }
 
 .navbar-text > a {
@@ -18,58 +16,58 @@
 }
 
 .navbar-static-bottom {
-    border-radius: 0;
-    z-index: 1000;
-    border-width: 0 0 1px;
-    padding-right: 0;
-    padding-left: 0;
-    margin: 20px 0 0;
+  border-radius: 0;
+  z-index: 1000;
+  border-width: 0 0 1px;
+  padding-right: 0;
+  padding-left: 0;
+  margin: 20px 0 0;
 }
 hr {
-    height: 2px;
-    background-color:#595959;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    width: 30%;
+  height: 2px;
+  background-color:#595959;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 30%;
 }
 
 .navbar-default .navbar-nav > .active > a{
-    background-color: #45add3 !important;
+  background-color: #45add3 !important;
 }
 
 
 .thumbnail{        
-    width: 60%; 
-    height: 60%;
-    margin: auto;
-    overflow: auto;
+  width: 60%; 
+  height: 60%;
+  margin: auto;
+  overflow: auto;
 }
 
 .column {
-    width: 170px;
-    float: left;
-    padding-bottom: 100px;
+  width: 170px;
+  float: left;
+  padding-bottom: 100px;
   }
-  .portlet {
-    margin: 0 1em 1em 0;
-    padding: 0.3em;
-  }
-  .portlet-header {
-    padding: 0.2em 0.3em;
-    margin-bottom: 0.5em;
-    position: relative;
-  }
-  .portlet-toggle {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    margin-top: -8px;
-  }
-  .portlet-content {
-    padding: 0.4em;
-  }
-  .portlet-placeholder {
-    border: 1px dotted black;
-    margin: 0 1em 1em 0;
-    height: 50px;
-  }
+.portlet {
+  margin: 0 1em 1em 0;
+  padding: 0.3em;
+}
+.portlet-header {
+  padding: 0.2em 0.3em;
+  margin-bottom: 0.5em;
+  position: relative;
+}
+.portlet-toggle {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -8px;
+}
+.portlet-content {
+  padding: 0.4em;
+}
+.portlet-placeholder {
+  border: 1px dotted black;
+  margin: 0 1em 1em 0;
+  height: 50px;
+}
