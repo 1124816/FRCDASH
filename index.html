@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="js/touch.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
@@ -53,30 +54,33 @@
       </div>
     </div>
 
-    <div class="column">
+    <div class="column column2">
 
     <div class="portlet">
-      <div class="portlet-header">Feeds</div>
+      <div class="portlet-header">Control</div>
+      <div class="portlet-content" style="text-align:center;">
+        <button type="button" class="btn btn-success" onclick="enable();">Enable</button>
+        <button type="button" class="btn btn-danger" onclick="disable();">Disable</button>
+      </div>
+    </div>
+
+    <div class="portlet">
+      <div class="portlet-header">Stat</div>
+      <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
+    </div>
+
+    </div>
+
+    <div class="column column1">
+
+    <div class="portlet">
+      <div class="portlet-header">Cam</div>
       <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
     </div>
 
     <div class="portlet">
-      <div class="portlet-header">News</div>
-      <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
-    </div>
 
-    </div>
-
-    <div class="column">
-
-    <div class="portlet">
-      <div class="portlet-header">Feeds</div>
-      <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
-    </div>
-
-    <div class="portlet">
-
-      <div class="portlet-header">News</div>
+      <div class="portlet-header">Users</div>
 
       <div class="portlet-content">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
 
@@ -99,6 +103,8 @@
     $( ".column" ).sortable({
       connectWith: ".column",
       handle: ".portlet-header",
+      delay: 500,
+      helper: "clone",
       cancel: ".portlet-toggle",
       placeholder: "portlet-placeholder ui-corner-all"
     });
