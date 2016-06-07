@@ -7,9 +7,7 @@
     <meta name="description" content="Team 4924 DashBoard">
     <meta name="author" content="Me">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="js/touch.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -54,75 +52,9 @@
       </div>
     </div>
 
-    <div class="column column2" id="row1">
 
-    <div class="tile panel panel-default">
-      <div class="tile__title panel-heading panel-title">Control</div>
-      <div class="tile__body panel-body" style="text-align:center;">
-        <button type="button" class="btn btn-success" onclick="enable();">Enable</button>
-        <button type="button" class="btn btn-danger" onclick="disable();">Disable</button>
-      </div>
-    </div>
-
-    <div class="tile panel panel-default">
-      <div class="tile__title panel-heading panel-title">Stat</div>
-      <div class="tile__title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
-    </div>
-
-    </div>
-
-    <div class="column column1" id="row2">
-
-    <div class="tile panel panel-default">
-      <div class="tile__title panel-heading panel-title">Cam</div>
-      <div class="tile__body panel-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
-    </div>
-
-    <div class="tile panel panel-default">
-      <div class="tile__title panel-heading panel-title">Users</div>
-      <div class="tile__body panel-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</div>
-    </div>
+    <ui-view></ui-view>
 
 
-
-    </div>
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/Sortable.js"></script>
-    <script>
-
-    var container = document.getElementById("row1");
-    var sort = Sortable.create(container, {
-      group: "page",
-      animation: 150, // ms, animation speed moving items when sorting, `0` — without animation
-      handle: ".tile__title", // Restricts sort start click/touch to the specified element
-      draggable: ".tile", // Specifies which items inside the element should be sortable
-      onUpdate: function (evt/**Event*/){
-         var item = evt.item; // the current dragged HTMLElement
-      }
-    });
-
-    var container = document.getElementById("row2");
-    var sort = Sortable.create(container, {
-      group: "page",
-      animation: 150, // ms, animation speed moving items when sorting, `0` — without animation
-      handle: ".tile__title", // Restricts sort start click/touch to the specified element
-      draggable: ".tile", // Specifies which items inside the element should be sortable
-      onUpdate: function (evt/**Event*/){
-         var item = evt.item; // the current dragged HTMLElement
-      }
-    });
-
-    </script>
-    <script>
-
-
-
-    </script>
   </body>
 </html>
